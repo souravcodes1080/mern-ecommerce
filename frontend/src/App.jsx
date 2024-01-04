@@ -1,5 +1,6 @@
 import React from 'react'
 import Navbar from './Components/Navbar/Navbar'
+import Footer from './Components/Footer/Footer'
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import Shop from './Pages/Shop'
 import ShopCategory from './Pages/ShopCategory'
@@ -11,7 +12,8 @@ function App() {
     <>
     <BrowserRouter>
       <Navbar />
-      <Routes>
+      <div className="body-wrapper">
+        <Routes>
         <Route path="/" element={<Shop />} />
         <Route path="/men" element={<ShopCategory category="men" />} />
         <Route path="/women" element={<ShopCategory category="women" />} />
@@ -22,6 +24,9 @@ function App() {
         <Route path='/cart' element={<Cart />} />
         <Route path='/login' element={<LoginSignup />} />
       </Routes>
+      </div>
+      <Footer />
+      
     </BrowserRouter>
     </>
   )
