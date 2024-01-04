@@ -1,9 +1,11 @@
 .offers{
+    margin-top: 75px !important;
     width: 65%;
     height: 60vh;
     display: flex;
     margin: auto;
     padding: 0 140px;
+    padding-top: 30px;
     margin-bottom: 150px;
     background: linear-gradient(180deg, #fde1ff 0%, #e1ffea22 60% );
 }
@@ -19,6 +21,7 @@
     font-size: 70px;
     font-weight: 600;
     text-transform: uppercase ;
+    line-height: 75px;
 }
 
 .offers .offers-left p{

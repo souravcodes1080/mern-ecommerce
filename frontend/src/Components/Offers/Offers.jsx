@@ -9,7 +9,7 @@ function Offers() {
         <div className="offers">
             <div className="offers-left">
                 <h1>Exclusive</h1>
-                <h1>Offers for You</h1>
+                <h1>Offers for</h1><h1>You</h1>
                 <p>Only on Best Seller Products</p>
                 <button>Check Now &nbsp;&nbsp;
                 <img src={arrow_icon} alt="arrow_icon" />
