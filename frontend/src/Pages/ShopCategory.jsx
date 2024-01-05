@@ -32,6 +32,9 @@ function ShopCategory({category, banner}) {
           })
         }
       </div>
+      <div className="shopcategory-loadmore">
+        Explore More
+      </div>
     </div>
     </>
   )
