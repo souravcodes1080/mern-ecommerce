@@ -4,7 +4,9 @@
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
+ 
 }
 .body-wrapper{
-  margin-top: 97px;
+  margin-top: 80px;
+  overflow-x: hidden;
 }
