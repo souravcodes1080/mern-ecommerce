@@ -24,3 +24,8 @@
     transform: scale(1.02);
     transition: 0.3s ease all;
 }
+
+.item-link{
+    text-decoration: none;
+    color: #374151;
+}

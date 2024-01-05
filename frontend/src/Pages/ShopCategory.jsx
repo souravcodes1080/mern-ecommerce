@@ -25,7 +25,7 @@ function ShopCategory({category, banner}) {
         {
           all_product.map((product, i)=>{
             if(category === product.category){
-              return (<Item key={i} image={product.image} name={product.name} new_price={product.new_price} old_price={product.old_price} />)
+              return (<Item key={i} id={product.id} image={product.image} name={product.name} new_price={product.new_price} old_price={product.old_price} />)
             }else{
               return null 
             }
