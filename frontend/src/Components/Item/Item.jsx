@@ -1,10 +1,10 @@
 import React from 'react'
 import "./item.css"
-function Items({image, name, new_price, old_price}) {
+function Item({image, name, new_price, old_price}) {
   return (
     <>
         <div className="item">
-            <img src={image} alt="product_image" />
+            <img src={image} alt="product_image" width={"100%"} />
             <p>{name}</p>
             <div className="items-prices">
               <div className="item-price-new">
@@ -19,4 +19,4 @@ function Items({image, name, new_price, old_price}) {
   )
 }
 
-export default Items
+export default Item
