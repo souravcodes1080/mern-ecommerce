@@ -2,7 +2,7 @@ import React from 'react'
 import "./hero.css"
 import hand_icon from "../assets/hand_icon.png"
 import arrow_icon from "../assets/arrow.png"
-// import hero_image from "../assets/hero_image.png"
+import hero_image from "../assets/hero_image.png"
 function Hero() {
   return (
     <>
@@ -27,7 +27,7 @@ function Hero() {
               </div>
             </div>
             <div className="hero-right">
-              <img src={"https://www.appier.com/hs-fs/hubfs/Appier%20Website%20Images/By%20Pages/Solution/Ecommerce/Ecommerce-HeroImage.png?width=1800&height=1800&name=Ecommerce-HeroImage.png"} alt="hero_img" width={"70%"}/>
+              <img src={hero_image} alt="hero_img" width={"80%"}/>
             </div>
         </div>
     </>
