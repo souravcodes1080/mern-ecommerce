@@ -23,11 +23,11 @@ function Hero() {
                 <div className="">
                   Latest Collection
                 </div>
-                <img src={arrow_icon} alt="arrow" />
+                <img src={arrow_icon} alt="arrow" className='arrow_icon' />
               </div>
             </div>
             <div className="hero-right">
-              <img src={hero_image} alt="hero_img" width={"80%"}/>
+              <img src={hero_image} alt="hero_img" width={"550px"}/>
             </div>
         </div>
     </>

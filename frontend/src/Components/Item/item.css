@@ -1,7 +1,9 @@
 .item{
-    width: 300px;
+    width: 280px;
 }
-
+.item img{
+    width: 100%;
+}
 .item p{
     margin: 6px 0;
 }
@@ -28,4 +30,47 @@
 .item-link{
     text-decoration: none;
     color: #374151;
+}
+
+@media(max-width:1280px){
+    .item{
+        width: 220px;
+        font-size: 14px;
+    }
+    .item-price-old{
+        font-size: 14px;
+    }
+    .item-price-new{
+        font-size: 14px;
+    }
+}
+@media(max-width:1024px){
+    .item{
+        width: 170px;
+        font-size: 13px;
+    }
+    .item-price-old{
+        font-size: 13px;
+    }
+    .item-price-new{
+        font-size: 13px;
+    }
+}
+@media(max-width:800px){
+    .item{
+        width: 120px;
+        font-size: 12px;
+    }
+    .item-price-old{
+        font-size: 12px;
+    }
+    .item-price-new{
+        font-size: 12px;
+    }
+}
+@media(max-width:500px){
+    .item{
+        width: 160px;
+    }
+    
 }
