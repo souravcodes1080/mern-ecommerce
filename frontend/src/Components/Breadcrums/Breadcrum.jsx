@@ -6,7 +6,7 @@ function Breadcrum({product}) {
   return (
     <>
         <div className="breadcrum">
-            HOME <img src={arrow_icon} alt="breadcrum_arrow" /> SHOP <img src={arrow_icon} alt="breadcrum_arrow" /> {product.category} <img src={arrow_icon} alt="breadcrum_arrow" /> {product.name}
+            HOME <img src={arrow_icon} alt="breadcrum_arrow" /> SHOP <img src={arrow_icon} alt="breadcrum_arrow" /> {product.category} <img src={arrow_icon} alt="breadcrum_arrow" /> {(product.name).substring(0,30)}...
         </div>
     </>
   )

@@ -5,6 +5,32 @@
     color: #5e5e5e;
     font-size: 16px;
     font-weight: 500;
-    margin: 135px 170px 60px 170px;
+    margin: 45px 170px 60px 170px;
     text-transform: capitalize;
+}
+@media(max-width:1280px){
+    .breadcrum{
+        margin: 30px 50px;
+        font-size: 14px;
+    }
+}
+@media(max-width:1024px){
+    .breadcrum{
+        margin: 30px 30px;
+        font-size: 13px;
+    }
+}
+@media(max-width:800px){
+    .breadcrum{
+        margin: 30px 10px;
+        font-size: 12px;
+    }
+    .breadcrum img{
+        width: 5px;
+    }
+}
+@media(max-width:500px){
+    .breadcrum{
+        font-size: 13px;
+    }
 }
