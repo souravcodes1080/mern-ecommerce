@@ -32,7 +32,7 @@ function Footer() {
             </div>
             <div className="footer-copyright">
                 <hr />
-                <p>Copyright @ Shopee 2024 - All rights reserved.</p>
+                <p>Copyright @ Sourav 2024 - All rights reserved.</p>
             </div>
         </div>
     </>
