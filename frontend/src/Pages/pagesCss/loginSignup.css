@@ -45,6 +45,7 @@
 }
 
 .loginSignup-login{
+    text-align: left;
     margin-top: 20px;
     color: #5c5c5c;
     font-size: 500;
@@ -57,7 +58,8 @@
 .loginSignup-agree{
     display: flex;
     margin-top: 20px;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 20px;
     color: #5c5c5c;
     font-size: 16px;
     font-weight: 500;
@@ -67,3 +69,61 @@
     width: 20px;
     margin: 0;
 }
+
+
+
+
+@media(max-width:1280px){
+    .loginSignup{
+        padding-top: 50px;
+    }
+    .loginSignup-container{
+        padding-bottom: 30px;
+        width: auto;
+        max-width: 500px;
+        max-height: 500px;
+    }
+    .loginSignup-container h1{
+        margin: 0px 0;
+    }
+    .loginSignup-fields{
+        gap: 20px;
+        margin-top: 20px;
+    }
+    .loginSignup-fields input{
+        height: 20px;
+    }
+    .loginSignup-fields button{
+        height: 20px;
+    }
+    .loginSignup-login{
+        font-size: 16px;
+    }
+    .loginSignup-agree{
+        margin-top: 10px;
+    }
+ }
+ @media(max-width:1024px){
+    .loginSignup-container{
+        transform: scale(0.8);
+    }
+ }
+ @media(max-width:800px){
+    
+ }
+ @media(max-width:500px){
+    .loginSignup{
+        margin-bottom: 30px;
+    }
+    .loginSignup-container{
+        padding: 30px;
+    }
+    .loginSignup-agree input[type=checkbox]{
+        width: 15px;
+        margin: 0;
+    }
+    .loginSignup-agree{
+        gap: 5px;
+        font-size: 14px;
+    }
+ }

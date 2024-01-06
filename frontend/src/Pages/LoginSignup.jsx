@@ -17,7 +17,7 @@ function LoginSignup() {
           </p>
           <div className="loginSignup-agree">
             <input type="checkbox" name="" id="" />
-            <p>By continuing, I agree to the terms of use & policy privacy.</p>
+            <p>I agree to the terms of use & policy privacy.</p>
           </div>
           <button>Continue</button>
         </div>
