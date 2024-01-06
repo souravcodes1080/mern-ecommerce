@@ -55,3 +55,31 @@
     height: 2px;
     background-color: #c7c7c7;
 }
+
+@media(max-width:800px){
+    .footer{
+        gap: 20px;
+    }
+    .footer-logo{
+        gap: 10px;
+        align-items: end;
+    }
+    .footer-logo img{
+        width: 40px;
+    }
+    .footer-logo p{
+        font-size: 25px;
+    }
+    .footer-links{
+        font-size: 14px;
+        gap: 15px;
+    }
+    .footer-social-icon img{
+        width: 22px;
+    }
+    .footer-copyright{
+        gap: 15px;
+        margin-bottom: 15px;
+        font-size: 13px;
+    }
+}

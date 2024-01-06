@@ -12,7 +12,7 @@ function Offers() {
                 <h1>Offers for</h1><h1>You</h1>
                 <p>Only on Best Seller Products</p>
                 <button>Check Now &nbsp;&nbsp;
-                <img src={arrow_icon} alt="arrow_icon" />
+                {/* <img src={arrow_icon} alt="arrow_icon" className='arrow_icon' /> */}
                 </button>
                 
             </div>

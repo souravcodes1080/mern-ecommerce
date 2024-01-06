@@ -137,6 +137,7 @@
         width: 175px;
         height: 40px;
         font-size: 12px;
+        align-items: center;
     }
     .arrow_icon{
         padding-right: 10px;
