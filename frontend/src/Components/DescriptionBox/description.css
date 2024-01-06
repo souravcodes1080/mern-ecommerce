@@ -28,3 +28,26 @@
     padding: 48px;
     padding-bottom: 70px;
 }
+
+@media(max-width:1280px){
+    .description-box{
+        margin: 60px;
+    }
+    .description-box-navbox{
+        font-size: 14px;
+        font-weight: 600;
+        width: 141px;
+        height: 50px;
+        border: 1px solid #d0d0d0;
+    }
+}
+@media(max-width:800px){
+    
+    .description-box{
+        margin: 60px 20px 40px 20px;
+    }
+    .description-box-description{
+        padding: 20px;
+        font-size: 12px;
+    }
+}
