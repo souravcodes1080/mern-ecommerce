@@ -20,7 +20,7 @@ function Navbar() {
     <div className="navbar">
       <div className="nav-logo">
         <img src={logo} alt="brand_logo" width={"50px"} />
-        <p>SHOPSY</p>
+        <p>SHOPEE</p>
       </div>
       
       <ul className="nav-menu" ref={menuRef}>

@@ -10,7 +10,7 @@ function Footer() {
         <div className="footer">
             <div className="footer-logo">
                 <img src={footer_logo} alt="footer_logo" />
-                <p>SHOPSY</p>
+                <p>SHOPEE</p>
             </div>
             <ul className="footer-links">
                 <li>Company</li>
@@ -32,7 +32,7 @@ function Footer() {
             </div>
             <div className="footer-copyright">
                 <hr />
-                <p>Copyright @ Shopsy 2024 - All rights reserved.</p>
+                <p>Copyright @ Shopee 2024 - All rights reserved.</p>
             </div>
         </div>
     </>
