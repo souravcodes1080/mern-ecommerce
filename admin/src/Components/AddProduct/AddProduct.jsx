@@ -21,7 +21,38 @@ function AddProduct() {
 
   const addProduct = async () => {
     console.log(productDetails);
-    
+    let responseData;
+    let product = productDetails;
+    let formData = new FormData();
+    formData.append("product", image);
+
+    await fetch("http://localhost:5000/upload", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+      },
+      body: formData,
+    }).then((res) =>
+      res.json().then((data) => {
+        responseData = data;
+      })
+    );
+
+    if (responseData.success) {
+      product.image = responseData.image_url;
+    }
+
+    await fetch("http://localhost:5000/addproduct", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(product)
+    }).then((res)=>res.json()).then((data)=>{
+        data.success? alert("Product Added."): alert("Failed.")
+    });
+
   };
 
   return (
@@ -30,6 +61,7 @@ function AddProduct() {
         <div className="add-product-item-field">
           <p>Product title</p>
           <input
+          required
             value={productDetails.name}
             onChange={changeHandler}
             type="text"
@@ -41,6 +73,7 @@ function AddProduct() {
           <div className="add-product-item-field">
             <p>Price</p>
             <input
+            required
               value={productDetails.old_price}
               onChange={changeHandler}
               type="number"
@@ -51,6 +84,7 @@ function AddProduct() {
           <div className="add-product-item-field">
             <p>Offer Price</p>
             <input
+            required
               value={productDetails.new_price}
               onChange={changeHandler}
               type="number"
