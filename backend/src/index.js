@@ -119,6 +119,11 @@ app.post("/removeproduct", async (req, res)=>{
   })
 })
 
+app.get("/allproducts", async (req, res)=>{
+  let products = await Product.find({})
+  console.log("All Products fetched.")
+  res.send(products)
+})
 
 //connection to db
 connectdb()
