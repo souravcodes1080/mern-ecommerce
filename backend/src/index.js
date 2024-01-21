@@ -80,6 +80,91 @@ const Product = mongoose.model("Product", {
   },
 });
 
+//user schema
+
+const Users = mongoose.model("Users", {
+  name: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    unique: true,
+    required: true,
+  },
+  password: {
+    type: String,
+  },
+  cartData: {
+    type: Object,
+  },
+  date: {
+    type: Date,
+    default: Date.now,
+  },
+});
+
+//endpoints for user --------
+
+app.post("/signup", async (req, res) => {
+  let check = await Users.findOne({ email: req.body.email });
+  if (check) {
+    return res
+      .status(400)
+      .json({ success: false, errors: "Existing users found." });
+  }
+  let cart = {};
+
+  for (let i = 0; i < 300; i++) {
+    cart[i] = 0;
+  }
+  const user = new Users({
+    name: req.body.username,
+    email: req.body.email,
+    password: req.body.password,
+    cartData: cart,
+  });
+
+  if (user.password.length < 6) {
+    return res
+      .status(400)
+      .json({ success: false, errors: "Create a strong Password." });
+  }
+
+  await user.save();
+
+  const data = {
+    user: {
+      id: user.id,
+    },
+  };
+
+  const token = jwt.sign(data, "secret_ecom");
+  res.json({ success: true, token });
+});
+
+app.post("/login", async (req, res) => {
+  let user = await Users.findOne({ email: req.body.email });
+  if (!user) {
+    return res.status(404).json({ success: false, errors: "User not found." });
+  }
+  const passCompare = req.body.password === user.password;
+
+  if (passCompare) {
+    const data = {
+      user: {
+        id: user.id,
+      },
+    };
+    const token = jwt.sign(data, 'secret_ecom')
+    res.json({success:true, token})
+  }
+
+  if(!passCompare){
+    return res.status(400).json({success: false, errors: "Wrond password."})
+  }
+
+});
 
 //endpoints for products ----
 
@@ -90,7 +175,7 @@ app.post("/addproduct", async (req, res) => {
     let last_product_array = products.slice(-1);
     let last_product = last_product_array[0];
     id = last_product.id + 1;
-  }else{
+  } else {
     id = 1;
   }
   const product = new Product({
@@ -110,20 +195,20 @@ app.post("/addproduct", async (req, res) => {
   });
 });
 
-app.post("/removeproduct", async (req, res)=>{
-  await Product.findOneAndDelete({id:req.body.id})
-  console.log("Product Removed.")
+app.post("/removeproduct", async (req, res) => {
+  await Product.findOneAndDelete({ id: req.body.id });
+  console.log("Product Removed.");
   res.json({
     success: true,
-    name: req.body.name
-  })
-})
+    name: req.body.name,
+  });
+});
 
-app.get("/allproducts", async (req, res)=>{
-  let products = await Product.find({})
-  console.log("All Products fetched.")
-  res.send(products)
-})
+app.get("/allproducts", async (req, res) => {
+  let products = await Product.find({});
+  console.log("All Products fetched.");
+  res.send(products);
+});
 
 //connection to db
 connectdb()
