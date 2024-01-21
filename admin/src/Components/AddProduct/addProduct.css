@@ -1,6 +1,6 @@
 .add-product {
     box-sizing: border-box;
-    width: 100%;
+    /* width: 100%; */
     max-width: 800px;
     padding: 30px 50px;
     margin: 20px 30px;

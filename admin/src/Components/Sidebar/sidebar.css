@@ -5,9 +5,8 @@
     gap: 20px;
     width: 100%;
     max-width: 250px;
-    height: 100vh;
     background-color: white;
-
+    /* border-right: 2px solid rgba(128, 128, 128, 0.125); */
 }
 
 .sidebar-item {
