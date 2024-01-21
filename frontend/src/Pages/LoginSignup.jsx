@@ -13,10 +13,43 @@ function LoginSignup() {
   };
 
   const login = async () => {
-    console.log(formData)
+    let responseData;
+    await fetch("http://localhost:5000/login", {
+      method: "post",
+      headers: {
+        Accept: "application/form-data",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((response) => response.json())
+      .then((data) => (responseData = data));
+    if (responseData.success) {
+      localStorage.setItem("authToken", responseData.token);
+      window.location.replace("/");
+    }else{
+      alert(responseData.errors)
+    }
   };
+
   const signup = async () => {
-    console.log(formData)
+    let responseData;
+    await fetch("http://localhost:5000/signup", {
+      method: "post",
+      headers: {
+        Accept: "application/form-data",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((response) => response.json())
+      .then((data) => (responseData = data));
+    if (responseData.success) {
+      localStorage.setItem("authToken", responseData.token);
+      window.location.replace("/");
+    }else{
+      alert(responseData.errors)
+    }
   };
 
   return (

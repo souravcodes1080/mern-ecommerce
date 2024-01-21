@@ -1,6 +1,6 @@
 import React, { useContext, useRef, useState } from "react";
 import "./nabvar.css";
-import dropdown_icon from "../assets/navbar-dropdown.png"
+import dropdown_icon from "../assets/navbar-dropdown.png";
 import logo from "../assets/logo.png";
 import cart_icon from "../assets/cart_icon.png";
 import { Link } from "react-router-dom";
@@ -8,13 +8,13 @@ import { ShopContext } from "../../Context/ShopContext";
 
 function Navbar() {
   const [menu, setMenu] = useState("shop");
-  const {getTotalCartItems} = useContext(ShopContext)
-  const menuRef = useRef()
+  const { getTotalCartItems } = useContext(ShopContext);
+  const menuRef = useRef();
 
-  const dropdownToggle = (e) =>{
-    menuRef.current.classList.toggle("nav-menu-visble")
-    e.target.classList.toggle('open')
-  }
+  const dropdownToggle = (e) => {
+    menuRef.current.classList.toggle("nav-menu-visble");
+    e.target.classList.toggle("open");
+  };
 
   return (
     <div className="navbar">
@@ -22,7 +22,7 @@ function Navbar() {
         <img src={logo} alt="brand_logo" width={"50px"} />
         <p>SHOPEE</p>
       </div>
-      
+
       <ul className="nav-menu" ref={menuRef}>
         <li
           onClick={() => {
@@ -62,16 +62,27 @@ function Navbar() {
         </li>
       </ul>
       <div className="nav-login-cart">
-        <Link to="/login">
+        {localStorage.getItem("authToken") ? (
           <button
             onClick={() => {
-              setMenu("login");
+              localStorage.removeItem("authToken");
+              window.location.replace("/");
             }}
-            className="nav-login"
           >
-            Login
+            Logout
           </button>
-        </Link>
+        ) : (
+          <Link to="/login">
+            <button
+              onClick={() => {
+                setMenu("login");
+              }}
+              className="nav-login"
+            >
+              Login
+            </button>
+          </Link>
+        )}
 
         <Link to="/cart">
           <img
@@ -85,7 +96,12 @@ function Navbar() {
         </Link>
         <div className="nav-cart-count">{getTotalCartItems()}</div>
       </div>
-      <img onClick={dropdownToggle} src={dropdown_icon} alt="dropdown_icon" className="nav-dropdown"/>
+      <img
+        onClick={dropdownToggle}
+        src={dropdown_icon}
+        alt="dropdown_icon"
+        className="nav-dropdown"
+      />
     </div>
   );
 }
