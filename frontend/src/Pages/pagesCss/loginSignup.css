@@ -8,7 +8,7 @@
 .loginSignup-container{
     text-align: center;
     width: 500px;
-    height: 600px;
+    height: max-content;
     background: white;
     margin: auto;
     padding: 40px 60px 0px 60px;
@@ -34,6 +34,7 @@
 
 .loginSignup-container button{
     width: 100%;
+    margin-bottom: 60px;
     padding: 20px 0;
     color: white;
     background: #ff4141;
@@ -53,6 +54,7 @@
 .loginSignup-login span{
     color: #ff4141;
     font-weight: 500;
+    cursor: pointer;
 }
 
 .loginSignup-agree{
