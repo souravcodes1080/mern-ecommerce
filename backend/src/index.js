@@ -214,7 +214,6 @@ app.get("/allproducts", async (req, res) => {
 app.get("/newcollections", async (req, res) => {
   let products = await Product.find({});
   let newCollection = products.slice(1).slice(-8);
-  console.log("new collection fetched.");
   res.send(newCollection);
 });
 
