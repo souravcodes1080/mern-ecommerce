@@ -217,6 +217,14 @@ app.get("/newcollections", async (req, res) => {
   res.send(newCollection);
 });
 
+//endpoints for popular
+
+app.get("/popular", async (req, res) => {
+  let products = await Product.find({ category: "women" });
+  let popular = products.slice(0, 4);
+  res.send(popular);
+});
+
 //connection to db
 connectdb()
   .then(() => {
