@@ -245,6 +245,7 @@ const fetchUser = async (req, res, next) => {
 };
 
 //creating endpoint for adding product in cart
+
 app.post("/addtocart", fetchUser, async (req, res) => {
   let userdata = await Users.findOne({ _id: req.user.id });
   userdata.cartData[req.body.itemId] += 1;
@@ -254,7 +255,9 @@ app.post("/addtocart", fetchUser, async (req, res) => {
   );
   res.send({message: "Product added to cart."});
 });
+
 //creating endpoint to remove product from cart
+
 app.post("/removefromcart", fetchUser, async (req, res) => {
   let userdata = await Users.findOne({ _id: req.user.id });
   if( userdata.cartData[req.body.itemId] > 0){
@@ -266,6 +269,14 @@ app.post("/removefromcart", fetchUser, async (req, res) => {
   );
   res.send({message: "Product removed to cart."});
 });
+
+//endpoint to get cart items
+
+app.post("/getcart", fetchUser, async (req, res)=>{
+  let userdata = await Users.findOne({ _id: req.user.id });
+  res.json(userdata.cartData)
+})
+
 
 //connection to db
 connectdb()
