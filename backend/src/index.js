@@ -156,14 +156,13 @@ app.post("/login", async (req, res) => {
         id: user.id,
       },
     };
-    const token = jwt.sign(data, 'secret_ecom')
-    res.json({success:true, token})
+    const token = jwt.sign(data, "secret_ecom");
+    res.json({ success: true, token });
   }
 
-  if(!passCompare){
-    return res.status(400).json({success: false, errors: "Wrond password."})
+  if (!passCompare) {
+    return res.status(400).json({ success: false, errors: "Wrond password." });
   }
-
 });
 
 //endpoints for products ----
@@ -208,6 +207,15 @@ app.get("/allproducts", async (req, res) => {
   let products = await Product.find({});
   console.log("All Products fetched.");
   res.send(products);
+});
+
+//endpoints for new collections
+
+app.get("/newcollections", async (req, res) => {
+  let products = await Product.find({});
+  let newCollection = products.slice(1).slice(-8);
+  console.log("new collection fetched.");
+  res.send(newCollection);
 });
 
 //connection to db
