@@ -49,7 +49,7 @@ const upload = multer({
 app.post("/upload", upload.single("product"), (req, res) => {
   res.json({
     success: 1,
-    image_url: `http://localhost:${process.env.PORT}/images/${req.file.filename}`,
+    image_url: `https://shopsy-api.onrender.com/images/${req.file.filename}`,
   });
 });
 
