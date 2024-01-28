@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-import connectdb from "../db/index.js";
+import connectdb from "./db/index.js";
 import express from "express";
 import jwt from "jsonwebtoken";
 import multer from "multer";
@@ -17,13 +17,13 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 app.use(cors());
-app.use("/images", express.static(path.join(__dirname, "../upload/images")));
+app.use("/images", express.static(path.join(__dirname, "./upload/images")));
 app.get("/", (req, res) => {
   res.json("hi");
 });
 
 const storage = multer.diskStorage({
-  destination: path.join(__dirname, "../upload/images"),
+  destination: path.join(__dirname, "./upload/images"),
   filename: (req, file, cb) => {
     return cb(
       null,
