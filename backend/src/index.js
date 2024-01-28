@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(cors());
 app.use("/images", express.static(path.join(__dirname, "../upload/images")));
 app.get("/", (req, res) => {
-  res.send("hi");
+  res.json("hi");
 });
 
 const storage = multer.diskStorage({
