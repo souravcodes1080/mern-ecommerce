@@ -21,9 +21,16 @@ app.use("/images", express.static(path.join(__dirname, "./upload/images")));
 app.get("/", (req, res) => {
   res.json("hi");
 });
+
+
+
+//----------------------------------
 app.get("/test", (req, res) => {
   res.json("hiii");
 });
+//-----------------------------------
+
+
 
 const storage = multer.diskStorage({
   destination: path.join(__dirname, "./upload/images"),
