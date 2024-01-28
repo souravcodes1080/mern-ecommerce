@@ -5,7 +5,7 @@ function NewCollections() {
   const [new_collections, setNew_collections] = useState([])
 
   useEffect(()=>{
-    fetch("http://localhost:5000/newcollections")
+    fetch("https://shopsy-api.onrender.com/newcollections")
     .then((res)=>res.json())
     .then((data)=>setNew_collections(data))
   }, [])

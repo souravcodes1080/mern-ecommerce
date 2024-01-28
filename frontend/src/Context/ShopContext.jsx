@@ -14,12 +14,12 @@ const ShopContextProvider = (props) => {
   const [cartItems, setCartItems] = useState(getDefaultCard());
 
   useEffect(() => {
-    fetch("http://localhost:5000/allproducts")
+    fetch("https://shopsy-api.onrender.com/allproducts")
       .then((res) => res.json())
       .then((data) => setAllProduct(data));
 
       if(localStorage.getItem('authToken')){
-        fetch("http://localhost:5000/getcart", {
+        fetch("https://shopsy-api.onrender.com/getcart", {
             method: 'POST',
             headers: {
                 Accept: 'application/form-data',
@@ -35,7 +35,7 @@ const ShopContextProvider = (props) => {
   const addToCart = (itemId) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
     if (localStorage.getItem("authToken")) {
-      fetch("http://localhost:5000/addtocart", {
+      fetch("https://shopsy-api.onrender.com/addtocart", {
         method: "POST",
         headers: {
           Accept: "application/form-data",
@@ -51,7 +51,7 @@ const ShopContextProvider = (props) => {
   const removeFromCart = (itemId) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
     if (localStorage.getItem("authToken")) {
-        fetch("http://localhost:5000/removefromcart", {
+        fetch("https://shopsy-api.onrender.com/removefromcart", {
           method: "POST",
           headers: {
             Accept: "application/form-data",

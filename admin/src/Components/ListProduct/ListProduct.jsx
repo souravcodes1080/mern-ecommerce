@@ -5,7 +5,7 @@ function ListProduct() {
   const [allProducts, setAllProducts] = useState([]);
 
   const fetchInfo = async () => {
-    await fetch("http://localhost:5000/allProducts")
+    await fetch("https://shopsy-api.onrender.com/allProducts")
       .then((res) => res.json())
       .then((data) => {
         setAllProducts(data);
@@ -17,7 +17,7 @@ function ListProduct() {
   }, []);
 
   const removeProduct = async (id)=>{
-    await fetch("http://localhost:5000/removeproduct", {
+    await fetch("https://shopsy-api.onrender.com/removeproduct", {
       method: 'POST',
       headers:{
         Accept: "application/json",

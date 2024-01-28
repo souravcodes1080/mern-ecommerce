@@ -26,7 +26,7 @@ function AddProduct() {
     let formData = new FormData();
     formData.append("product", image);
 
-    await fetch("http://localhost:5000/upload", {
+    await fetch("https://shopsy-api.onrender.com/upload", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -42,7 +42,7 @@ function AddProduct() {
       product.image = responseData.image_url;
     }
 
-    await fetch("http://localhost:5000/addproduct", {
+    await fetch("https://shopsy-api.onrender.com/addproduct", {
       method: "POST",
       headers: {
         Accept: "application/json",

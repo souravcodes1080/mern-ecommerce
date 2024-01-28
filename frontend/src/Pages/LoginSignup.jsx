@@ -14,7 +14,7 @@ function LoginSignup() {
 
   const login = async () => {
     let responseData;
-    await fetch("http://localhost:5000/login", {
+    await fetch("https://shopsy-api.onrender.com/login", {
       method: "post",
       headers: {
         Accept: "application/form-data",
@@ -34,7 +34,7 @@ function LoginSignup() {
 
   const signup = async () => {
     let responseData;
-    await fetch("http://localhost:5000/signup", {
+    await fetch("https://shopsy-api.onrender.com/signup", {
       method: "post",
       headers: {
         Accept: "application/form-data",
